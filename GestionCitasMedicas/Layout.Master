@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="GestionCitasMedicas.Layout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="./src/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./src/css/sidebars.css" rel="stylesheet" />
+    <link href="./src/fontawesome-icons/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="d-flex">
+    <form id="form1" runat="server">
+        <div class="d-flex flex-nowrap">
+           <div
+            class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary vh-100"
+            style="width: 280px">
+
+            <a href="/"
+              class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+              <img src="./src/img/Logo-Citas-Medicas.png" alt="Logo del sistema" class="img-fluid w-25" />
+              <span class="fs-4">Citas médicas</span>
+            </a>
+            <hr />
+
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="/inicio.aspx" class="nav-link <%= GetActiveClass("Inicio") %> link-body-emphasis">
+                  <i class="fa-solid fa-house"></i>
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a href="/cita.aspx" class="nav-link <%= GetActiveClass("Agendar cita") %> link-body-emphasis">
+                  <i class="fa-solid fa-book"></i>
+                  Agendar cita
+                </a>
+              </li>
+              <li>
+                <a href="/DetalleCitas.aspx" class="nav-link <%= GetActiveClass("Consultar citas") %> link-body-emphasis">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  Consultar citas
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link <%= GetActiveClass("Administrar horarios") %> link-body-emphasis">
+                  <i class="fa-solid fa-calendar-plus"></i>
+                  Administrar horarios
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link <%= GetActiveClass("Consultar horarios") %> link-body-emphasis">
+                  <i class="fa-solid fa-calendar-days"></i>
+                   Consultar horarios
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link <%= GetActiveClass("Administrar especialidades") %> link-body-emphasis">
+                  <i class="fa-solid fa-user-doctor"></i>
+                     Administrar especialidades
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown">
+                <asp:LinkButton ID="btnSalir" runat="server" cssClass="btn btn-danger" OnClick="btn_Cerrar_Sesion_Click">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión
+                </asp:LinkButton>
+            </div>
+          </div>
+          <div class="flex-grow-1 p-4" style="overflow-y: auto;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+
+    <script src="./src/js/popper.min.js"></script>
+    <script src="./src/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/sidebars.js"></script>
+    <script src="./src/fontawesome-icons/js/all.min.js"></script>
+</body>
+</html>
