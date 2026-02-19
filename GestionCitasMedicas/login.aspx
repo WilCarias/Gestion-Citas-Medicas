@@ -22,11 +22,21 @@
             <div class="mb-3">
                 <asp:Label runat="server" ID="lblCorreo" for="txtCorreo" Text="Correo electrónico"></asp:Label>
                 <asp:TextBox runat="server" ID="txtCorreo" cssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator 
+                    ID="rfvCorreo" 
+                    runat="server" 
+                    ControlToValidate="txtCorreo"
+                    ErrorMessage="El campo correo es obligatorio." 
+                    ForeColor="Red" 
+                    display="Dynamic"></asp:RequiredFieldValidator>
             </div>
 
             <div class="mb-3">
                 <asp:Label runat="server" ID="lblContrasenia" for="txtContrasenia">Contraseña</asp:Label>
                 <asp:TextBox runat="server" ID="txtContrasenia" TextMode="Password" cssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvContra" runat="server" ControlToValidate="txtContrasenia"
+                    ErrorMessage="El campo contraseña es obligatorio." ForeColor="Red" display="Dynamic" EnableClientScript="true"
+                    CausesValidation="true"></asp:RequiredFieldValidator>
             </div>
 
             <div class="form-check mb-4">
@@ -37,8 +47,7 @@
             <asp:Label runat="server" class="mb-4">¿No tienes una cuenta? <a href="/registrarse.aspx">Registrarse</a></asp:Label>
 
             <asp:button ID="btnEnviar" runat="server" Text="Iniciar Sesión" cssClass="btn btn-primary w-100 mb-4" 
-                OnClick="btn_Iniciar_Sesion_Click" />
-                
+                OnClick="btn_Iniciar_Sesion_Click" CausesValidation="true" />
 
         </form>
 
