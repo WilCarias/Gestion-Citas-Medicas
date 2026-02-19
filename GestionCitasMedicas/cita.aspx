@@ -31,7 +31,7 @@
             
             <div class="row d-flex justify-content-center align-items-center mb-3">
             <div class="col-md-6 text-center">
-                <asp:button runat="server" class="btn btn-success mt-3" Text="Registrarte"/>
+                <asp:button runat="server" class="btn btn-success mt-3" Text="Registrar cita"/>
             </div>
         </div>
         </div>
